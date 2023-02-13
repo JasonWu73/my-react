@@ -1,6 +1,6 @@
 import Expenses from './components/expense/Expenses';
 
-function App() {
+const App = () => {
   const expenseItems = generateExpenseItems();
 
   return (
@@ -9,7 +9,7 @@ function App() {
       <Expenses items={expenseItems}/>
     </div>
   );
-}
+};
 
 function generateExpenseItems() {
   return [

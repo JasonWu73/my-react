@@ -7,7 +7,7 @@ import './Card.css';
  * @param {JSX.Element} children 业务组件
  * @returns {JSX.Element} 卡片组件
  */
-function Card({className, children}) {
+const Card = ({className, children}) => {
   const classes = 'card ' + className;
 
   return (
@@ -15,6 +15,6 @@ function Card({className, children}) {
       {children}
     </div>
   );
-}
+};
 
 export default Card;
