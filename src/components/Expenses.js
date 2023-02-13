@@ -1,5 +1,6 @@
 import './Expenses.css';
 import ExpenseItem from './ExpenseItem';
+import Card from './Card';
 
 /**
  * 显示开销的组件。
@@ -13,7 +14,7 @@ import ExpenseItem from './ExpenseItem';
  */
 function Expenses({items}) {
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpenseItem
         date={items[0].date}
         title={items[0].title}
@@ -29,7 +30,7 @@ function Expenses({items}) {
         title={items[2].title}
         amount={items[2].amount}
       />
-    </div>
+    </Card>
   );
 }
 
