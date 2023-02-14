@@ -1,17 +1,6 @@
 import Expenses from './components/expense/Expenses';
 
-function App() {
-  const expenseItems = generateExpenseItems();
-
-  return (
-    <div>
-      <h2>Let's get started!</h2>
-      <Expenses items={expenseItems}/>
-    </div>
-  );
-}
-
-function generateExpenseItems() {
+const generateExpenseItems = () => {
   return [
     {
       id: 100,
@@ -32,6 +21,17 @@ function generateExpenseItems() {
       amount: 70
     }
   ];
-}
+};
+
+const App = () => {
+  const expenseItems = generateExpenseItems();
+
+  return (
+    <div>
+      <h2>Let's get started!</h2>
+      <Expenses items={expenseItems}/>
+    </div>
+  );
+};
 
 export default App;
