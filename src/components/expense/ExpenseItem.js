@@ -1,3 +1,5 @@
+import {useState} from 'react';
+
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import Card from '../ui/Card';
@@ -11,13 +13,15 @@ import Card from '../ui/Card';
  * @returns {JSX.Element} 展示开销数据的组件
  */
 function ExpenseItem({date, title, amount}) {
+  const [titleState, setTitleState] = useState(title);
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={date}/>
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{titleState}</h2>
         <div className="expense-item__price">${amount}</div>
-        <button onClick={clickHandler}>Change Title</button>
+        <button onClick={() => clickHandler(titleState, setTitleState)}>Change Title</button>
       </div>
     </Card>
   );
@@ -26,10 +30,12 @@ function ExpenseItem({date, title, amount}) {
 /**
  * 测试点击事件。
  *
- * @param {Event} event
+ * @param {*} field 原值
+ * @param {(any) => void} setter setter
  */
-function clickHandler(event) {
-  console.log(event.target);
+function clickHandler(field, setter) {
+  setter('Updated!');
+  console.log('old title: ', field);
 }
 
 export default ExpenseItem;
