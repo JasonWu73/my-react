@@ -5,11 +5,7 @@ import Card from '../ui/Card';
 /**
  * 显示开销的组件。
  *
- * @param {Array} items 开销数据列表
- * @param {number} items.id 开销数据 id
- * @param {Date} items.date 开销时间
- * @param {string} items.title 开销说明
- * @param {number} items.amount 开销金额，单位：美元
+ * @param {{id: number, date: Date, title: string, amount: number}[]} items 开销数据列表
  * @returns {JSX.Element} 显示开销的组件
  */
 function Expenses({items}) {
