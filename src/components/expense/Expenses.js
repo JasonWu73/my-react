@@ -12,7 +12,7 @@ import Card from '../ui/Card';
  * @param {number} items.amount 开销金额，单位：美元
  * @returns {JSX.Element} 显示开销的组件
  */
-const Expenses = ({items}) => {
+function Expenses({items}) {
   return (
     <Card className="expenses">
       <ExpenseItem
@@ -32,6 +32,6 @@ const Expenses = ({items}) => {
       />
     </Card>
   );
-};
+}
 
 export default Expenses;

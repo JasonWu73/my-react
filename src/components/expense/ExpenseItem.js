@@ -10,7 +10,7 @@ import Card from '../ui/Card';
  * @param {number} amount 开销金额，单位：美元
  * @returns {JSX.Element} 展示开销数据的组件
  */
-const ExpenseItem = ({date, title, amount}) => {
+function ExpenseItem({date, title, amount}) {
   return (
     <Card className="expense-item">
       <ExpenseDate date={date}/>
@@ -21,7 +21,7 @@ const ExpenseItem = ({date, title, amount}) => {
       </div>
     </Card>
   );
-};
+}
 
 /**
  * 测试点击事件。
