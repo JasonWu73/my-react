@@ -17,9 +17,19 @@ const ExpenseItem = ({date, title, amount}) => {
       <div className="expense-item__description">
         <h2>{title}</h2>
         <div className="expense-item__price">${amount}</div>
+        <button onClick={clickHandler}>Change Title</button>
       </div>
     </Card>
   );
 };
+
+/**
+ * 测试点击事件。
+ *
+ * @param {Event} event
+ */
+function clickHandler(event) {
+  console.log(event.target);
+}
 
 export default ExpenseItem;
