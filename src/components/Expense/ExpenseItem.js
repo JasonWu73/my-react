@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
-import Card from '../ui/Card';
+import Card from '../Ui/Card';
 
 /**
  * 开销组件。
@@ -15,7 +15,6 @@ import Card from '../ui/Card';
  */
 const ExpenseItem = props => {
   const [title, setTitle] = useState(props.title);
-  console.log('render');
 
   const clickHandler = () => {
     setTitle('Updated!');

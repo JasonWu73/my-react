@@ -1,6 +1,6 @@
 import './Expenses.css';
 import ExpenseItem from './ExpenseItem';
-import Card from '../ui/Card';
+import Card from '../Ui/Card';
 
 /**
  * 显示开销的组件。
