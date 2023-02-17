@@ -1,10 +1,10 @@
 import './GoalList.css';
 
-export default function GoalList() {
+export default function GoalList(props) {
   return (
     <ul className="goal-list">
-      <li className="card">111</li>
-      <li>111</li>
+      {props.goals.map(goal =>
+        <li key={goal} onClick={() => props.onDelete(goal)}>{goal}</li>)}
     </ul>
   );
 };
