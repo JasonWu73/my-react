@@ -1,6 +1,8 @@
+import {useState} from 'react';
 import './Expenses.css';
 import ExpenseItem from './ExpenseItem';
 import Card from '../shared/Card';
+import ExpensesFilter from './ExpensesFilter';
 
 /**
  * 显示开销的组件。
@@ -10,8 +12,16 @@ import Card from '../shared/Card';
  * @returns {JSX.Element} 显示开销的组件
  */
 const Expenses = props => {
+  const [year, setYear] = useState(2020);
+
+  const filterChangeHandler = (year) => {
+    setYear(year);
+    console.log('year: ', year);
+  };
+
   return (
     <Card className="expenses">
+      <ExpensesFilter selectedYear={year} onFilterChange={filterChangeHandler}/>
       <ExpenseItem
         date={props.items[0].date}
         title={props.items[0].title}
