@@ -26,6 +26,7 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
+  gap: 1rem;
 }
 
 .new-expense__actions button {
