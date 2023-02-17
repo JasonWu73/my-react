@@ -8,7 +8,7 @@ import ExpensesFilter from './ExpensesFilter';
  * 显示开销的组件。
  *
  * @param {Object} props 组件属性
- * @param {{id: number, date: Date, title: string, amount: number}[]} props.items 开销数据列表
+ * @param {{id: string, date: Date, title: string, amount: number}[]} props.items 开销数据列表
  * @returns {JSX.Element} 显示开销的组件
  */
 const Expenses = props => {

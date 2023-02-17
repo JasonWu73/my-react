@@ -6,19 +6,19 @@ import NewExpense from './new-expense';
 const generateDummyExpenses = () => {
   return [
     {
-      id: 100,
+      id: 'e1',
       date: new Date(2023, 2, 13),
       title: 'Hair Clay',
       amount: 20
     },
     {
-      id: 101,
+      id: 'e2',
       date: new Date(2023, 2, 12),
       title: 'Jeans',
       amount: 30
     },
     {
-      id: 102,
+      id: 'e3',
       date: new Date(2023, 2, 11),
       title: 'Adidas Stan Smith',
       amount: 70
