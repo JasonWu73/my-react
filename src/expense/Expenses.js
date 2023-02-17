@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import './Expenses.css';
-import ExpenseItem from './ExpenseItem';
 import Card from '../shared/Card';
 import ExpensesFilter from './ExpensesFilter';
+import ExpenseList from './ExpenseList';
 
 /**
  * 显示开销的组件。
@@ -32,18 +32,6 @@ const Expenses = props => {
     ));
   };
 
-  let expensesContent = <p>No expenses found.</p>
-  if (filteredExpenses.length > 0) {
-    expensesContent = filteredExpenses.map(
-      item => <ExpenseItem
-        key={item.id}
-        date={item.date}
-        title={item.title}
-        amount={item.amount}
-      />
-    );
-  }
-
   return (
     <Card className="expenses">
       <ExpensesFilter
@@ -51,7 +39,7 @@ const Expenses = props => {
         selectedYear={year}
         onFilterChange={filterChangeHandler}
       />
-      {expensesContent}
+      <ExpenseList expenseList={filteredExpenses}/>
     </Card>
   );
 };

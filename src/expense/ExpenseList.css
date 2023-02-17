@@ -1,0 +1,7 @@
+.expenses__list {
+  color: white;
+}
+
+.expenses__list li {
+  list-style: none;
+}
