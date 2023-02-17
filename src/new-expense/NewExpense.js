@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 import './NewExpense.css';
-import Card from '../shared/Card';
+import Card from '../shared/card/Card';
 import ExpenseForm from './ExpenseForm';
 import NewExpenseButton from './NewExpenseButton';
 

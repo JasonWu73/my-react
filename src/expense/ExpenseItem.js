@@ -1,6 +1,6 @@
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
-import Card from '../shared/Card';
+import Card from '../shared/card/Card';
 
 /**
  * 开销组件。

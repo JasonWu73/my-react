@@ -7,7 +7,7 @@ const generateDummyExpenses = () => {
   return [
     {
       id: 'e1',
-      date: new Date(2023, 2, 13),
+      date: new Date(2023, 1, 13),
       title: 'Hair Clay',
       amount: 20
     },

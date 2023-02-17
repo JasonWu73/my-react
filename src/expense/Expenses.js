@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import './Expenses.css';
-import Card from '../shared/Card';
+import Card from '../shared/card/Card';
+import Chart from '../shared/chart';
 import ExpensesFilter from './ExpensesFilter';
 import ExpenseList from './ExpenseList';
 
@@ -34,6 +35,7 @@ const Expenses = props => {
 
   return (
     <Card className="expenses">
+      <Chart points={getMonthlyQuantity(props.items)}/>
       <ExpensesFilter
         years={uniqueYearOptions}
         selectedYear={year}
@@ -43,5 +45,29 @@ const Expenses = props => {
     </Card>
   );
 };
+
+function getMonthlyQuantity(expenses) {
+  const monthQuantities = [
+    {label: 'Jan', value: 0},
+    {label: 'Feb', value: 0},
+    {label: 'Mar', value: 0},
+    {label: 'Apr', value: 0},
+    {label: 'May', value: 0},
+    {label: 'Jun', value: 0},
+    {label: 'Jul', value: 0},
+    {label: 'Aug', value: 0},
+    {label: 'Sep', value: 0},
+    {label: 'Oct', value: 0},
+    {label: 'Nov', value: 0},
+    {label: 'Dec', value: 0}
+  ];
+
+  for (let expense of expenses) {
+    const index = expense.date.getMonth();
+    monthQuantities[index].value += 1;
+  }
+
+  return monthQuantities;
+}
 
 export default Expenses;
