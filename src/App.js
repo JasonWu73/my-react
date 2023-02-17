@@ -27,9 +27,13 @@ const generateExpenseItems = () => {
 const App = () => {
   const expenseItems = generateExpenseItems();
 
+  const addExpenseHandler = (newExpenseData) => {
+    console.log('addExpenseHandler: ', newExpenseData);
+  };
+
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenseItems}/>
     </div>
   );
