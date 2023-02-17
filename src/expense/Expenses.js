@@ -23,7 +23,6 @@ const Expenses = props => {
   const [filteredExpenses, setFilteredExpenses] = useState(props.items.filter(
     expense => equalsYear(expense.date, year)
   ));
-  console.log(filteredExpenses);
 
   const filterChangeHandler = (year) => {
     setYear(year);
