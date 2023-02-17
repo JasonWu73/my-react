@@ -1,5 +1,5 @@
-import Expenses from './components/Expense/Expenses';
-import NewExpense from './components/Expense/NewExpense/NewExpense';
+import Expenses from './expense';
+import NewExpense from './new-expense';
 
 const generateExpenseItems = () => {
   return [

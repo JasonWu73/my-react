@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
-import Card from '../Ui/Card';
+import Card from '../shared/Card';
 
 /**
  * 开销组件。
