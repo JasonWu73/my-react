@@ -12,17 +12,23 @@ export default function App() {
 
   return (
     <div>
-      <NewGoal/>
+      <NewGoal onAdd={goalToAdd => addGoalHandler(goalToAdd, setGoals)}/>
       <GoalList
         goals={goals}
-        onDelete={(goalToDelete) => deleteHandler(goalToDelete, setGoals)}
+        onDelete={goalToDelete => deleteHandler(goalToDelete, setGoals)}
       />
     </div>
   );
 }
 
-function deleteHandler(goalToDelete, setGoals) {
+function addGoalHandler(goalToAdd, setGoals) {
   setGoals(previousGoals => {
-    return previousGoals.filter(goal => goal !== goalToDelete);
+    if (previousGoals.includes(goalToAdd)) return previousGoals;
+
+    return [goalToAdd, ...previousGoals];
   });
+}
+
+function deleteHandler(goalToDelete, setGoals) {
+  setGoals(previousGoals => previousGoals.filter(goal => goal !== goalToDelete));
 }

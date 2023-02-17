@@ -1,8 +1,8 @@
 import './NewGoal.css';
 import GoalForm from './GoalForm';
 
-export default function NewGoal() {
+export default function NewGoal(props) {
   return (
-    <GoalForm/>
+    <GoalForm onAdd={props.onAdd}/>
   );
 };
