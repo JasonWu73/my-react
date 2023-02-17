@@ -13,13 +13,13 @@ const generateDummyExpenses = () => {
     },
     {
       id: 'e2',
-      date: new Date(2023, 2, 12),
+      date: new Date(2022, 2, 12),
       title: 'Jeans',
       amount: 30
     },
     {
       id: 'e3',
-      date: new Date(2023, 2, 11),
+      date: new Date(2021, 2, 11),
       title: 'Adidas Stan Smith',
       amount: 70
     }

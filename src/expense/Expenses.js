@@ -12,17 +12,30 @@ import ExpensesFilter from './ExpensesFilter';
  * @returns {JSX.Element} 显示开销的组件
  */
 const Expenses = props => {
-  const [year, setYear] = useState(2020);
+  const yearOptions = props.items.map(expense => expense.date.getFullYear());
+  const uniqueYearOptions = [...new Set(yearOptions)];
+  const [year, setYear] = useState(props.items[0].date.getFullYear());
+  const equalsYear = (date, year) => date.getFullYear() === +year;
+  const [filteredExpenses, setFilteredExpenses] = useState(props.items.filter(
+    expense => equalsYear(expense.date, year)
+  ));
 
   const filterChangeHandler = (year) => {
     setYear(year);
-    console.log('year: ', year);
+
+    setFilteredExpenses(() => props.items.filter(
+      expense => equalsYear(expense.date, year)
+    ));
   };
 
   return (
     <Card className="expenses">
-      <ExpensesFilter selectedYear={year} onFilterChange={filterChangeHandler}/>
-      {props.items.map(item =>
+      <ExpensesFilter
+        years={uniqueYearOptions}
+        selectedYear={year}
+        onFilterChange={filterChangeHandler}
+      />
+      {filteredExpenses.map(item =>
         <ExpenseItem
           key={item.id}
           date={item.date}
