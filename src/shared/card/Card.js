@@ -1,7 +1,8 @@
 import './Card.css';
 
 export default function Card(props) {
-  const cssClasses = `card${props.className ? ' ' + props.className : ''}`;
+  console.log(props.className);
+  const cssClasses = `card ${props.className ? props.className : ''}`;
 
   return (
     <div className={cssClasses}>

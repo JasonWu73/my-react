@@ -1,7 +1,7 @@
 import './Button.css';
 
 export default function Button(props) {
-  const cssClasses = `btn${props.color === 'purple' && ' btn--purple'}`;
+  const cssClasses = `btn ${props.color === 'purple' ? 'btn--purple' : ''}`;
 
   return (
     <button
