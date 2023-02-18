@@ -18,6 +18,7 @@
 .form__inputs label {
   font-size: 2rem;
   font-weight: bolder;
+  border-color: #ccc;
 }
 
 .form__inputs input {
@@ -26,6 +27,7 @@
   padding: 0 0.8rem;
   border: 0.1rem solid #ccc;
   border-radius: 0.6rem;
+  outline: transparent;
 }
 
 .form__controls {
