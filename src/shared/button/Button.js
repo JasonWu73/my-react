@@ -1,7 +1,7 @@
-import './Button.css';
+import styles from './Button.module.css';
 
 export default function Button(props) {
-  const cssClasses = `btn ${props.color === 'purple' ? 'btn--purple' : ''}`;
+  const cssClasses = `${styles.btn} ${props.color === 'purple' ? styles['btn--purple'] : ''}`;
 
   return (
     <button
