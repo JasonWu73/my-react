@@ -2,36 +2,16 @@ import React from 'react';
 
 import './Assignment.css';
 
-// don't change the Component name "App"
 export default function App() {
-  const [isWarning, setIsWarning] = React.useState(false);
-
-  const componentContent = renderComponentContent(isWarning, setIsWarning);
+  const clickHandler = () => {
+    console.log('Clicked!');
+  };
 
   return (
-    <div id="assignment">
-      {componentContent}
+    <div>
+      <h2>You're logged in!</h2>
+      <p>Welcome to your user profile!</p>
+      <button onClick={clickHandler}>Click me!</button>
     </div>
   );
 }
-
-function renderComponentContent(isWarning, setIsWarning) {
-  let componentContent = (
-    <button onClick={toggleClickHandler(setIsWarning)}>Delete</button>
-  );
-  if (isWarning) {
-    componentContent = (
-      <div id="alert">
-        <h2>Are you sure?</h2>
-        <p>These changes can't be reverted!</p>
-        <button onClick={toggleClickHandler(setIsWarning)}>Proceed</button>
-      </div>
-    );
-  }
-  return componentContent;
-}
-
-function toggleClickHandler(setIsWarning) {
-  return () => setIsWarning(previousIsWarning => !previousIsWarning);
-}
-
