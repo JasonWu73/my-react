@@ -36,9 +36,10 @@ function goalChangeHandler(event, setNewGoal) {
 function submitHandler(event, newGoal, setNewGoal, onAdd) {
   event.preventDefault();
 
-  if (!newGoal) return;
+  const trimmedGoal = newGoal.trim();
+  if (trimmedGoal.length === 0) return;
 
-  onAdd(newGoal);
+  onAdd(trimmedGoal);
 
   setNewGoal('');
 }
