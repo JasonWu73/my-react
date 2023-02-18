@@ -30,6 +30,15 @@
   outline: transparent;
 }
 
+.form__inputs.invalid label {
+  color: red;
+}
+
+.form__inputs.invalid input {
+  border-color: red;
+  background-color: salmon;
+}
+
 .form__controls {
   margin-top: 1rem;
 }

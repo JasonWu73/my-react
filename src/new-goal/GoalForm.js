@@ -13,10 +13,9 @@ export default function GoalForm(props) {
       onSubmit={event => submitHandler(event, newGoal, setNewGoal, props.onAdd)}
     >
       <Card className="form">
-        <div className="form__inputs">
+        <div className={`form__inputs ${isInvalid ? 'invalid' : ''}`}>
           <label
             htmlFor="goal"
-            style={{color: isInvalid ? 'red' : 'black'}}
           >
             Course Goal
           </label>
@@ -26,10 +25,6 @@ export default function GoalForm(props) {
             value={newGoal}
             onChange={event =>
               goalChangeHandler(event, setNewGoal, setIsInvalid)}
-            style={{
-              borderColor: isInvalid ? 'red' : '#ccc',
-              backgroundColor: isInvalid ? 'salmon' : 'transparent'
-            }}
           />
         </div>
         <div className="form__controls">
