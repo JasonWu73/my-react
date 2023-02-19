@@ -1,0 +1,17 @@
+.btn {
+  background-color: mediumseagreen;
+  color: white;
+  border: none;
+  font-size: inherit;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: seagreen;
+}
