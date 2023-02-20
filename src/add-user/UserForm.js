@@ -3,6 +3,7 @@ import {useState} from 'react';
 import styles from './UserForm.module.css';
 import Card from '../shared/card';
 import Button from '../shared/button';
+import Model from '../shared/model';
 
 export default function UserForm(props) {
   const [enteredUsername, setEnteredUsername] = useState('');
@@ -40,41 +41,44 @@ export default function UserForm(props) {
   };
 
   return (
-    <Card className={styles['form-container']}>
-      <form
-        className={styles.form}
-        onSubmit={
-          event => submitHandler(
-            event,
-            enteredUsername,
-            setEnteredUsername,
-            enteredAge,
-            setEnteredAge
-          )
-        }
-      >
-        <div className={`${styles['form--row']} ${isInvalidEntered ? styles.error : ''}`}>
-          <label htmlFor="username">Username</label>
-          <input
-            id="username"
-            type="text"
-            value={enteredUsername}
-            onChange={usernameChangeHandler}
-          />
-        </div>
+    <div>
+      <Model title="Test For Error" message="Something wrong happened"/>
+      <Card className={styles['form-container']}>
+        <form
+          className={styles.form}
+          onSubmit={
+            event => submitHandler(
+              event,
+              enteredUsername,
+              setEnteredUsername,
+              enteredAge,
+              setEnteredAge
+            )
+          }
+        >
           <div className={`${styles['form--row']} ${isInvalidEntered ? styles.error : ''}`}>
-          <label htmlFor="age">Age (Years)</label>
-          <input
-            id="age"
-            type="text"
-            value={enteredAge}
-            onChange={ageChangeHandler}
-          />
-        </div>
-        <div className={styles['form--row']}>
-          <Button type="submit">Add User</Button>
-        </div>
-      </form>
-    </Card>
+            <label htmlFor="username">Username</label>
+            <input
+              id="username"
+              type="text"
+              value={enteredUsername}
+              onChange={usernameChangeHandler}
+            />
+          </div>
+          <div className={`${styles['form--row']} ${isInvalidEntered ? styles.error : ''}`}>
+            <label htmlFor="age">Age (Years)</label>
+            <input
+              id="age"
+              type="text"
+              value={enteredAge}
+              onChange={ageChangeHandler}
+            />
+          </div>
+          <div className={styles['form--row']}>
+            <Button type="submit">Add User</Button>
+          </div>
+        </form>
+      </Card>
+    </div>
   );
 };
