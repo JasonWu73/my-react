@@ -9,6 +9,9 @@ export default function UserForm(props) {
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredAge, setEnteredAge] = useState('');
   const [isInvalidEntered, setIsInvalidEntered] = useState(false);
+  const [validationResult, setValidationResult] = useState(
+    {title: '', message: ''}
+  );
 
   const usernameChangeHandler = event => {
     setEnteredUsername(event.target.value);
@@ -26,6 +29,19 @@ export default function UserForm(props) {
     const isInvalidAge = +enteredAge < 0 || isNaN(+enteredAge);
     if (isEmptyEntered || isInvalidAge) {
       setIsInvalidEntered(true);
+
+      if (isEmptyEntered) {
+        setValidationResult({
+          title: 'Invalid input',
+          message: 'Please enter a valid name and age (non-empty values).'
+        });
+      }
+      if (isInvalidAge) {
+        setValidationResult({
+          title: 'Invalid age',
+          message: 'Please enter a valid age (> 0).'
+        });
+      }
       return;
     }
 
@@ -40,22 +56,22 @@ export default function UserForm(props) {
     setEnteredAge('');
   };
 
+  const removeErrorModelHandler = () => {
+    setIsInvalidEntered(false);
+  };
+
   return (
     <div>
-      <Model title="Test For Error" message="Something wrong happened"/>
+      {
+        isInvalidEntered &&
+        <Model
+          title={validationResult.title}
+          message={validationResult.message}
+          onConfirm={removeErrorModelHandler}
+        />
+      }
       <Card className={styles['form-container']}>
-        <form
-          className={styles.form}
-          onSubmit={
-            event => submitHandler(
-              event,
-              enteredUsername,
-              setEnteredUsername,
-              enteredAge,
-              setEnteredAge
-            )
-          }
-        >
+        <form className={styles.form} onSubmit={submitHandler}>
           <div className={`${styles['form--row']} ${isInvalidEntered ? styles.error : ''}`}>
             <label htmlFor="username">Username</label>
             <input

@@ -13,10 +13,10 @@ export default function Modal(props) {
           <p>{props.message}</p>
         </div>
         <footer className={styles['modal--footer']}>
-          <Button>Okay</Button>
+          <Button onClick={props.onConfirm}>Okay</Button>
         </footer>
       </Card>
-      <div className={styles.backdrop}></div>
+      <div className={styles.backdrop} onClick={props.onConfirm}></div>
     </div>
   );
 }
