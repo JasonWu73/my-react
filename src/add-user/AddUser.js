@@ -1,7 +1,7 @@
 import UserForm from './UserForm';
 
-export default function AddUser() {
+export default function AddUser(props) {
   return (
-    <UserForm/>
+    <UserForm onAdd={props.onAdd}/>
   );
 };

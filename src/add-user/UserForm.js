@@ -4,7 +4,7 @@ import styles from './UserForm.module.css';
 import Card from '../shared/card';
 import Button from '../shared/button';
 
-export default function UserForm() {
+export default function UserForm(props) {
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredAge, setEnteredAge] = useState('');
   const [isInvalidEntered, setIsInvalidEntered] = useState(false);
@@ -29,7 +29,11 @@ export default function UserForm() {
     }
 
     setIsInvalidEntered(false);
-    console.log(enteredUsername, +enteredAge);
+
+    props.onAdd({
+      name: enteredUsername,
+      age: +enteredAge
+    });
 
     setEnteredUsername('');
     setEnteredAge('');
