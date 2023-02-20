@@ -35,3 +35,12 @@
 .form--row:last-of-type {
   justify-content: flex-end;
 }
+
+.form--row.error label {
+  color: red;
+}
+
+.form--row.error input {
+  border-color: red;
+  background-color: salmon;
+}
